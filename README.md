@@ -13,5 +13,6 @@ In component 5 we have fetched data from an API using get call and display it in
 ## Component 5:-
 With the help of component 5, we have made a navigation between two components, i.e. `component5 and component6`. The current `index.android.js/index.ios.js` have the code for the navigation between these two components.
 
-##p.s. i am expecting that you have done the react-native setup in your system and has followed the tut for creating a basic app using the react-native doc. If not, please refer `https://facebook.github.io/react-native/docs/getting-started.html`
+## p.s.
+I am expecting that you have done the react-native setup in your system and has followed the tut for creating a basic app using the react-native doc. If not, please refer `https://facebook.github.io/react-native/docs/getting-started.html`
 Name of component are set as component1, component2.. etc because it is not a project but a basic app to learn basic working.
