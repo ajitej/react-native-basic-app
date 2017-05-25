@@ -1,53 +1,32 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
   Text,
   View
 } from 'react-native';
 
+import { Navigator } from 'react-native-deprecated-custom-components';
+
+import Component5 from './app/components/Component5/Component5';
+import Component6 from './app/components/Component6/Component6';
+
 export default class AwesomeProject extends Component {
+  renderScene(route, navigator){
+    switch(route.id){
+      case 'component5': return (<Component5 navigator={navigator} title="Component5" />)
+      case 'component6': return (<Component6 navigator={navigator} user={route.user} title="Component6" />)
+    }
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Navigator
+        initialRoute={{id: 'component5'}}
+        renderScene={this.renderScene}
+        configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
+      />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
