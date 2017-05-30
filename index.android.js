@@ -7,21 +7,23 @@ import {
 
 import { Navigator } from 'react-native-deprecated-custom-components';
 
-import Component5 from './app/components/Component5/Component5';
-import Component6 from './app/components/Component6/Component6';
+import Component7 from './app/components/Component7/Component7';
+import Component8 from './app/components/Component8/Component8';
+//import Component5 from './app/components/Component5/Component5';
+//import Component6 from './app/components/Component6/Component6';
 
 export default class AwesomeProject extends Component {
   renderScene(route, navigator){
     switch(route.id){
-      case 'component5': return (<Component5 navigator={navigator} title="Component5" />)
-      case 'component6': return (<Component6 navigator={navigator} user={route.user} title="Component6" />)
+      case 'component7': return (<Component7 navigator={navigator} title="Component7" />)
+      case 'component8': return (<Component8 navigator={navigator} res={route.res} title="Component8" />)
     }
   }
 
   render() {
     return (
       <Navigator
-        initialRoute={{id: 'component5'}}
+        initialRoute={{id: 'component7'}}
         renderScene={this.renderScene}
         configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
       />
