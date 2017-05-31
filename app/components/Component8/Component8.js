@@ -3,14 +3,27 @@ import {
   AppRegistry,
   Text,
   View,
-  Button
+  TouchableHighlight,
+  StyleSheet
 } from 'react-native';
+
+class Button extends Component{
+  render(){
+    return(
+      <TouchableHighlight onPress={() => {this.props.onPress()}}>
+          <View style={styles.button}>
+            <Text style={{color: "white"}}>Go Back</Text> 
+          </View>
+      </TouchableHighlight>
+    );  
+  }
+}
 
 export default class Component6 extends Component {
   constructor(props){
     super(props);
     this.state = {
-      tile: this.props.res.title,
+      title: this.props.res.title,
       body: this.props.res.body
     }
   }
@@ -24,15 +37,27 @@ export default class Component6 extends Component {
   render() {
     return (
       <View>
-        <Text>{this.state.title}</Text>
-        <Text>{this.state.body}</Text>
-        <Button
-          onPress={this.onPress.bind(this)}
-          title="Go back"
-        />
+        <Text style={styles.text}>{this.state.title}</Text>
+        <Text style={styles.text}>{this.state.body}</Text>
+        <Button onPress={this.onPress.bind(this)}/>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+    text: {
+        color: 'white',
+        textAlign: 'center'
+    },
+    button: {
+      backgroundColor: "grey",
+      padding: 10,
+      alignItems: 'center',
+      marginTop: 15,
+      marginLeft: 100,
+      marginRight: 100
+    }
+});
 
 AppRegistry.registerComponent('Component6', () => Component6);

@@ -4,8 +4,21 @@ import {
   Text,
   View,
   TextInput,
-  Button
+  StyleSheet,
+  TouchableHighlight
 } from 'react-native';
+
+class Button extends Component{
+  render(){
+    return(
+      <TouchableHighlight onPress={() => {this.props.onPress()}}>
+          <View style={styles.button}>
+            <Text style={{color: "white"}}>Submit</Text> 
+          </View>
+      </TouchableHighlight>
+    );  
+  }
+}
 
 export default class Component7 extends Component {
   constructor(){
@@ -16,10 +29,6 @@ export default class Component7 extends Component {
       userId: ""
     }
   }
-
-  /*componentDidMount(){
-    this.fetchUsers();
-  }*/
 
   postUsers(){
     fetch('https://jsonplaceholder.typicode.com/posts',{
@@ -52,23 +61,44 @@ export default class Component7 extends Component {
       <View>
         <TextInput
           placeholder="enter title!"
+          placeholderTextColor= 'grey'
+          style={styles.input}
           onChangeText={(text) => this.setState({title:text})}
         />
         <TextInput
           placeholder="enter body!"
+          placeholderTextColor= 'grey'
+          style={styles.input}
           onChangeText={(text) => this.setState({body:text})}
         />
         <TextInput
           placeholder="enter userId!"
+          placeholderTextColor= 'grey'
+          style={styles.input}
           onChangeText={(text) => this.setState({userId:text})}
         />
-        <Button 
-          onPress={() => this.postUsers()}  
-          title="Submit"
-        />
+        <Button onPress={()=> {this.postUsers()}}/>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+    input: {
+        margin: 15,
+        height: 40,
+        borderColor: 'grey',
+        borderWidth: 1,
+        color: 'white'
+    },
+    button: {
+      backgroundColor: "grey",
+      padding: 10,
+      alignItems: 'center',
+      marginTop: 15,
+      marginLeft: 100,
+      marginRight: 100
+    }
+});
 
 AppRegistry.registerComponent('Component7', () => Component7);

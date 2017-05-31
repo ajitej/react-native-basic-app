@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   Text,
-  View
+  View,
+  StyleSheet,
+  Image
 } from 'react-native';
 
 import { Navigator } from 'react-native-deprecated-custom-components';
@@ -22,13 +24,25 @@ export default class AwesomeProject extends Component {
 
   render() {
     return (
+      <Image source={require('./images/fire.jpg')}
+          style={styles.backgroundImage}>
       <Navigator
         initialRoute={{id: 'component7'}}
         renderScene={this.renderScene}
-        configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
+        configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromTop}
       />
+      </Image>
     );
   }
 }
+
+const styles = StyleSheet.create({
+    backgroundImage: {
+        flex: 1,
+        width: null,
+        height: null,
+        resizeMode: 'cover'
+    }
+});
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
