@@ -19,7 +19,7 @@ class Button extends Component{
   }
 }
 
-export default class Component6 extends Component {
+export default class Component8 extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
     }
 });
 
-AppRegistry.registerComponent('Component6', () => Component6);
+AppRegistry.registerComponent('Component8', () => Component8);

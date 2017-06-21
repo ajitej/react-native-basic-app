@@ -11,12 +11,14 @@ import { Navigator } from 'react-native-deprecated-custom-components';
 
 import Component7 from './app/components/Component7/Component7';
 import Component8 from './app/components/Component8/Component8';
+//import Component1 from './app/components/Component1/Component1';
 //import Component5 from './app/components/Component5/Component5';
 //import Component6 from './app/components/Component6/Component6';
 
 export default class AwesomeProject extends Component {
   renderScene(route, navigator){
     switch(route.id){
+      //case 'component1': return (<Component1 navigator={navigator} title="Component1" />)
       case 'component7': return (<Component7 navigator={navigator} title="Component7" />)
       case 'component8': return (<Component8 navigator={navigator} res={route.res} title="Component8" />)
     }
@@ -24,7 +26,7 @@ export default class AwesomeProject extends Component {
 
   render() {
     return (
-      <Image source={require('./images/fire.jpg')}
+      <Image source={require('./images/texture.jpg')}
           style={styles.backgroundImage}>
       <Navigator
         initialRoute={{id: 'component7'}}

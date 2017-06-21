@@ -11,9 +11,9 @@ import {
 class Button extends Component{
   render(){
     return(
-      <TouchableHighlight onPress={() => {this.props.onPress()}}>
+      <TouchableHighlight onPress={() => {this.props.onPress()}} underlayColor='#fff'>
           <View style={styles.button}>
-            <Text style={{color: "white"}}>Submit</Text> 
+            <Text style={{color: "black"}}>Submit</Text> 
           </View>
       </TouchableHighlight>
     );  
@@ -61,19 +61,19 @@ export default class Component7 extends Component {
       <View>
         <TextInput
           placeholder="enter title!"
-          placeholderTextColor= 'grey'
+          placeholderTextColor= 'white'
           style={styles.input}
           onChangeText={(text) => this.setState({title:text})}
         />
         <TextInput
           placeholder="enter body!"
-          placeholderTextColor= 'grey'
+          placeholderTextColor= 'white'
           style={styles.input}
           onChangeText={(text) => this.setState({body:text})}
         />
         <TextInput
           placeholder="enter userId!"
-          placeholderTextColor= 'grey'
+          placeholderTextColor= 'white'
           style={styles.input}
           onChangeText={(text) => this.setState({userId:text})}
         />
@@ -85,19 +85,20 @@ export default class Component7 extends Component {
 
 const styles = StyleSheet.create({
     input: {
-        margin: 15,
-        height: 40,
-        borderColor: 'grey',
-        borderWidth: 1,
-        color: 'white'
+      margin: 15,
+      height: 40,
+      borderColor: 'white',
+      borderWidth: 1,
+      color: 'white'
     },
     button: {
-      backgroundColor: "grey",
+      backgroundColor: "white",
       padding: 10,
       alignItems: 'center',
       marginTop: 15,
       marginLeft: 100,
-      marginRight: 100
+      marginRight: 100,
+      borderRadius:10
     }
 });
 
